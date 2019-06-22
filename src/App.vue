@@ -13,7 +13,7 @@ import Navbar from '@/components/Navbar.vue';
 
 @Component({
   components: {
-    Footer, Navbar,
+    Footer, Navbar
   },
 })
 export default class App extends Vue {
