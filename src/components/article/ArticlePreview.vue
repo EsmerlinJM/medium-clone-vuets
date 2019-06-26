@@ -3,9 +3,9 @@
         <div class="article-meta">
             <a href=""><img :src="article.author.image" alt=""></a>
             <div class="info">
-                <a href="" class="author">
+                <router-link :to="`/@${article.author.username}`" class="author">
                     {{ article.author.username }}
-                </a>
+                </router-link>
                 <span class="date">
                     January 20th
                 </span>

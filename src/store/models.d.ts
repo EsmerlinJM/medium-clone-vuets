@@ -18,6 +18,10 @@ export interface Profile {
   following: boolean
 }
 
+export interface ProfileResponse {
+  profile: Profile
+}
+
 export interface UserResponse {
   user: User
 }

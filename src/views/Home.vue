@@ -62,12 +62,12 @@ import articles from '../store/modules/articles';
   }
 })
 export default class Home extends Vue {
-  public feed: Article[] = [];
+  public get feed() {
+    return articles.feed
+  }
 
   public async created() {
-    await articles.refreshGlobalFeed().then(() => {
-      this.feed = articles.globalFeed
-    })
+    await articles.refreshFeed('global')
   }
 }
 </script>

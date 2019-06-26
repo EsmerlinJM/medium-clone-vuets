@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html">conduit</a>
+      <router-link class="navbar-brand" to="/">Medium clone</router-link>
       <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
           <!-- Add "active" class when you're on that page" -->
@@ -11,6 +11,11 @@
           <a class="nav-link" href>
             <i class="ion-compose"></i>&nbsp;New Post
           </a>
+        </li>
+        <li v-if="username" class="nav-item">
+          <router-link class="nav-link" :to="`/@${username}`">
+            {{ username }}
+          </router-link>
         </li>
         <li v-if="username" class="nav-item">
           <a class="nav-link" href>
