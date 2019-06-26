@@ -7,20 +7,36 @@
           <!-- Add "active" class when you're on that page" -->
           <a class="nav-link active" href>Home</a>
         </li>
-        <li class="nav-item">
+        <li v-if="username" class="nav-item">
           <a class="nav-link" href>
             <i class="ion-compose"></i>&nbsp;New Post
           </a>
         </li>
-        <li class="nav-item">
+        <li v-if="username" class="nav-item">
           <a class="nav-link" href>
             <i class="ion-gear-a"></i>&nbsp;Settings
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href>Sign up</a>
+        <li v-if="!username" class="nav-item">
+          <router-link class="nav-link" to="/register">Sign up</router-link>
+        </li>
+        <li v-if="!username" class="nav-item">
+          <router-link class="nav-link" to="/login">Sign in</router-link>
         </li>
       </ul>
     </div>
   </nav>
 </template>
+
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
+import users from '@/store/modules/users'
+
+@Component
+export default class NavBar extends Vue {
+  get username() {
+    return users.username
+  }
+}
+</script>
+
