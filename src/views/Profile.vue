@@ -86,7 +86,7 @@ import users from '@/store/modules/users'
 
 @Component
 export default class Profile extends Vue {
-  public async created() {
+  public async mounted() {
     await users.loadProfile(this.$route.params.username)
   }
 

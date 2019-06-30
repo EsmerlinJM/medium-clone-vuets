@@ -50,3 +50,11 @@ export interface ArticlesResponse {
   articles?: Article[] | null;
   articlesCount?: number;
 }
+
+export interface UserForUpdate {
+  email?: string;
+  username?: string;
+  bio?: string;
+  password?: string;
+  image?: string;
+}
